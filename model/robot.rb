@@ -41,16 +41,17 @@ class Robot
     @position.y = new_position.y
   end
 
-  def left
-    
-  end
+  %w(left right).each do |rotate_way|
+    define_method(rotate_way) do
+      return if @position.nil? || @direction.nil?
 
-  def right
-    
+      new_direction = Direction.send("rotate_#{rotate_way}", @direction)
+      @direction = new_direction
+    end
   end
 
   def report
-    
+    "#{@position.y}, #{@position.x}, #{@direction}"
   end
 
   private

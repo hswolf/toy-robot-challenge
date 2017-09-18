@@ -143,4 +143,60 @@ RSpec.describe Position do
       end
     end
   end
+
+  describe '#left' do
+    before(:each) do
+      table_surface = TableSurface.new(5, 5)
+      @robot = Robot.new(table_surface)
+    end
+
+    subject { @robot.left }
+
+    context 'normal case' do
+      before do
+        @robot.place(0, 0, 'NORTH')
+        subject
+      end
+
+      it 'should rotate robot direction to the left side' do
+        expect(@robot.direction).to eq 'WEST'
+      end
+    end
+
+    context 'abnormal case' do
+      before { subject }
+
+      it 'should not change robot direction' do
+        expect(@robot.direction).to eq nil
+      end
+    end
+  end
+
+  describe '#right' do
+    before(:each) do
+      table_surface = TableSurface.new(5, 5)
+      @robot = Robot.new(table_surface)
+    end
+
+    subject { @robot.right }
+
+    context 'normal case' do
+      before do
+        @robot.place(0, 0, 'NORTH')
+        subject
+      end
+
+      it 'should rotate robot direction to the right side' do
+        expect(@robot.direction).to eq 'EST'
+      end
+    end
+
+    context 'abnormal case' do
+      before { subject }
+
+      it 'should not change robot direction' do
+        expect(@robot.direction).to eq nil
+      end
+    end
+  end
 end
