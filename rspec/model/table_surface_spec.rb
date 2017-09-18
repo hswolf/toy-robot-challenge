@@ -21,7 +21,7 @@ RSpec.describe TableSurface do
       let(:position) { 'foo' }
 
       it 'should raise error' do
-        expect { table_surface.position_is_inside?(position) }.to raise_error(ArgumentError)
+        expect { subject }.to raise_error(ArgumentError)
       end
     end
   end

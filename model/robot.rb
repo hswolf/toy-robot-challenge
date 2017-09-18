@@ -12,7 +12,12 @@ class Robot
   end
 
   def place(x, y, direction)
-    
+    position = Position.new(x, y)
+    return unless @playground.position_is_inside?(position)
+    return unless Direction.is_a_direction?(direction)
+
+    @position = position
+    @direction = direction
   end
 
   def move
