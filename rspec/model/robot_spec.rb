@@ -1,7 +1,7 @@
 require_relative '../../model/robot'
 require_relative '../../model/table_surface'
 
-RSpec.describe Position do
+RSpec.describe Robot do
   describe '#place' do
     before(:all) do
       table_surface = TableSurface.new(5, 5)
@@ -88,8 +88,8 @@ RSpec.describe Position do
         end
       end
 
-      context 'Direction is EST' do
-        let(:direction) { 'EST' }
+      context 'Direction is EAST' do
+        let(:direction) { 'EAST' }
         before { subject }
 
         it 'should increase x by 1' do
@@ -187,7 +187,7 @@ RSpec.describe Position do
       end
 
       it 'should rotate robot direction to the right side' do
-        expect(@robot.direction).to eq 'EST'
+        expect(@robot.direction).to eq 'EAST'
       end
     end
 

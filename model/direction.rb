@@ -1,7 +1,7 @@
 class Direction
-  DIRECTIONS = %w(NORTH EST SOUTH WEST)
+  DIRECTIONS = %w(NORTH EAST SOUTH WEST)
   NORTH = 'NORTH'
-  EST = 'EST'
+  EAST = 'EAST'
   SOUTH = 'SOUTH'
   WEST = 'WEST'
 

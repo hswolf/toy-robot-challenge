@@ -39,7 +39,7 @@ RSpec.describe Direction do
     subject { Direction.rotate_right(direction) }
 
     context 'with valid direction' do
-      let(:direction) { 'esT' }
+      let(:direction) { 'easT' }
 
       it { is_expected.to eq 'SOUTH' }
     end

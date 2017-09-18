@@ -17,7 +17,7 @@ class Robot
     return unless Direction.is_a_direction?(direction)
 
     @position = position
-    @direction = direction
+    @direction = direction.upcase
   end
 
   def move
@@ -27,7 +27,7 @@ class Robot
     case @direction
     when Direction::NORTH
       new_position.y += 1
-    when Direction::EST
+    when Direction::EAST
       new_position.x += 1
     when Direction::SOUTH
       new_position.y -= 1
@@ -51,7 +51,7 @@ class Robot
   end
 
   def report
-    "#{@position.y}, #{@position.x}, #{@direction}"
+    "#{@position.try(:y)}, #{@position.try(:x)}, #{@direction}"
   end
 
   private
