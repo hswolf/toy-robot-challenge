@@ -1,3 +1,5 @@
+require_relative 'position'
+
 class TableSurface
   attr_accessor :length, :height
 
@@ -9,6 +11,9 @@ class TableSurface
   end
 
   def inside_table_surface?(position)
+    raise ArgumentError.new('Position is invalid') unless position.is_a?(Position)
+
+    (0..(@length - 1)).include?(position.x) && (0..(@height - 1)).include?(position.y)
   end
 
   private
