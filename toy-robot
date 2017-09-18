@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require_relative 'main'
+
+options = {}
+
+OptionParser.new do |parser|
+  parser.banner = "Usage: toy-robot [options]"
+
+  parser.on("-h", "--help", "Show this help message") do ||
+    puts parser
+    exit
+  end
+
+  parser.on("-p", "--input INPUT", "Absolute path to input data. If none specified application will use default Input file.") do |v|
+    options[:input] = v
+  end
+end.parse!
+
+Main.new.run(options[:input])

@@ -6,11 +6,11 @@ SURFACE_HEIGHT = 5
 INPUT_FILE = 'input'
 
 class Main
-  def run(input_file = INPUT_FILE)
+  def run(input_file)
     table_surface = TableSurface.new(SURFACE_WITH, SURFACE_HEIGHT)
     robot = Robot.new(table_surface)
 
-    reports = create_robot_reports_from_file(input_file, robot)
+    reports = create_robot_reports_from_file(input_file || INPUT_FILE, robot)
 
     output(reports)
   end
