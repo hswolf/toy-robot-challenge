@@ -24,7 +24,7 @@ class Main
 
       case stripped_line.split(' ')[0].downcase
       when 'place'
-        y, x, direction = stripped_line.split(' ')[1].split(',')
+        x, y, direction = stripped_line.split(' ')[1].split(',')
         robot.place(x, y, direction)
       when 'report'
         reports << robot.report

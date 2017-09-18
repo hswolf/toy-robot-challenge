@@ -83,8 +83,8 @@ RSpec.describe Robot do
         before { subject }
 
         it 'should increase x by 1' do
-          expect(@robot.position.y).to eq 2
-          expect(@robot.position.x).to eq 3
+          expect(@robot.position.y).to eq 3
+          expect(@robot.position.x).to eq 2
         end
       end
 
@@ -93,8 +93,8 @@ RSpec.describe Robot do
         before { subject }
 
         it 'should increase y by 1' do
-          expect(@robot.position.x).to eq 2
-          expect(@robot.position.y).to eq 3
+          expect(@robot.position.x).to eq 3
+          expect(@robot.position.y).to eq 2
         end
       end
 
@@ -103,8 +103,8 @@ RSpec.describe Robot do
         before { subject }
 
         it 'should decrease x by 1' do
-          expect(@robot.position.x).to eq 1
-          expect(@robot.position.y).to eq 2
+          expect(@robot.position.x).to eq 2
+          expect(@robot.position.y).to eq 1
         end
       end
 
@@ -113,8 +113,8 @@ RSpec.describe Robot do
         before { subject }
 
         it 'should decrease y by 1' do
-          expect(@robot.position.x).to eq 2
-          expect(@robot.position.y).to eq 1
+          expect(@robot.position.x).to eq 1
+          expect(@robot.position.y).to eq 2
         end
       end
     end

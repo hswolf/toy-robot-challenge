@@ -26,13 +26,13 @@ class Robot
 
     case @direction
     when Direction::NORTH
-      new_position.x += 1
-    when Direction::EAST
       new_position.y += 1
+    when Direction::EAST
+      new_position.x += 1
     when Direction::SOUTH
-      new_position.x -= 1
-    when Direction::WEST
       new_position.y -= 1
+    when Direction::WEST
+      new_position.x -= 1
     end
 
     return unless @playground.position_is_inside?(new_position)
@@ -56,7 +56,7 @@ class Robot
     x = @position.nil? ? '' : @position.x
     y = @position.nil? ? '' : @position.y
 
-    "#{y},#{x},#{@direction}"
+    "#{x},#{y},#{@direction}"
   end
 
   private
