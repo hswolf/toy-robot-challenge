@@ -11,6 +11,7 @@ class Position
   private
 
   def validate!(x, y)
-    
+    raise ArgumentError.new('X must be an Integer') unless x.is_a?(Integer)
+    raise ArgumentError.new('Y must be an Integer') unless y.is_a?(Integer)
   end
 end
