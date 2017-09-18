@@ -1,9 +1,9 @@
 require_relative '../../model/table_surface'
 
 RSpec.describe TableSurface do
-  describe '#inside_table_surface?' do
+  describe '#position_is_inside?' do
     table_surface = TableSurface.new(5, 5)
-    subject { table_surface.inside_table_surface?(position) }
+    subject { table_surface.position_is_inside?(position) }
 
     context 'with position inside table surface' do
       let(:position) { Position.new(0, 1) }
@@ -21,7 +21,7 @@ RSpec.describe TableSurface do
       let(:position) { 'foo' }
 
       it 'should raise error' do
-        expect { table_surface.inside_table_surface?(position) }.to raise_error(ArgumentError)
+        expect { table_surface.position_is_inside?(position) }.to raise_error(ArgumentError)
       end
     end
   end

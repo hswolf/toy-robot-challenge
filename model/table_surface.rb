@@ -1,6 +1,7 @@
+require_relative 'playground'
 require_relative 'position'
 
-class TableSurface
+class TableSurface < Playground
   attr_accessor :width, :height
 
   def initialize(width, height)
@@ -10,7 +11,7 @@ class TableSurface
     @height = height
   end
 
-  def inside_table_surface?(position)
+  def position_is_inside?(position)
     raise ArgumentError.new('Position is invalid') unless position.is_a?(Position)
 
     (0..(@width - 1)).include?(position.x) && (0..(@height - 1)).include?(position.y)
