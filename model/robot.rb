@@ -51,6 +51,8 @@ class Robot
   end
 
   def report
+    return if @position.nil? || @direction.nil?
+
     x = @position.nil? ? '' : @position.x
     y = @position.nil? ? '' : @position.y
 

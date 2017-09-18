@@ -1,0 +1,16 @@
+    PLACE 4,5,WEST
+    MOVE
+    REPORT
+    MOVE
+    PLACE 1,2,EAST
+    MOVE
+    MOVE
+    MOVE
+    MOVE
+    MOVE
+    LEFT
+    MOVE
+    MOVE
+    MOVE
+    MOVE
+    REPORT
