@@ -1,5 +1,9 @@
 class Direction
   DIRECTIONS = %w(NORTH EST SOUTH WEST)
+  NORTH = 'NORTH'
+  EST = 'EST'
+  SOUTH = 'SOUTH'
+  WEST = 'WEST'
 
   def self.is_a_direction?(direction)
     DIRECTIONS.include?(direction.upcase)

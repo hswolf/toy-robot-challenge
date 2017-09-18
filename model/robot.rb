@@ -21,7 +21,24 @@ class Robot
   end
 
   def move
-    
+    return if @position.nil? || @direction.nil?
+    new_position = Position.new(@position.x, @position.y)
+
+    case @direction
+    when Direction::NORTH
+      new_position.y += 1
+    when Direction::EST
+      new_position.x += 1
+    when Direction::SOUTH
+      new_position.y -= 1
+    when Direction::WEST
+      new_position.x -= 1
+    end
+
+    return unless @playground.position_is_inside?(new_position)
+
+    @position.x = new_position.x
+    @position.y = new_position.y
   end
 
   def left
