@@ -1,4 +1,6 @@
 require_relative 'playground'
+require_relative 'position'
+require_relative 'direction'
 
 class Robot
   attr_accessor :position, :direction, :playground
